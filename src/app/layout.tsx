@@ -1,5 +1,6 @@
 import './globals.css'
 import { Nunito } from 'next/font/google'
+import { Header } from '@/components/Header/Header'
 
 export const metadata = {
   title: 'Airbnb',
@@ -16,8 +17,9 @@ export default function RootLayout ({
   children: React.ReactNode
 }) {
   return (
-    <html lang='es'>
+    <html lang='en'>
       <body className={font.className}>
+        <Header />
         {children}
       </body>
     </html>
