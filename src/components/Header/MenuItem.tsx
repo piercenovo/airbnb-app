@@ -1,11 +1,11 @@
 'use client'
 
-interface Props {
+interface MenuItemProps {
   onClick: () => void
   label: string
 }
 
-export const MenuItem: React.FC<Props> = ({ onClick, label }) => {
+export const MenuItem: React.FC<MenuItemProps> = ({ onClick, label }) => {
   return (
     <div
       onClick={onClick}

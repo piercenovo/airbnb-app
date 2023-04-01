@@ -1,6 +1,8 @@
 import './globals.css'
 import { Nunito } from 'next/font/google'
 import { Header } from '@/components/Header/Header'
+import { RegisterModal } from '@/components/Modals/RegisterModal'
+import { ToasterProvider } from '@/providers/ToasterProvider'
 
 export const metadata = {
   title: 'Airbnb',
@@ -19,6 +21,8 @@ export default function RootLayout ({
   return (
     <html lang='en'>
       <body className={font.className}>
+        <ToasterProvider />
+        <RegisterModal />
         <Header />
         {children}
       </body>

@@ -4,8 +4,10 @@ import { MenuIcon } from '../Icons'
 import { Avatar } from '../Avatar'
 import { useCallback, useState } from 'react'
 import { MenuItem } from './MenuItem'
+import { useRegisterModal } from '@/hooks/useRegisterModal'
 
 export function UserMenu () {
+  const registerModal = useRegisterModal()
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = useCallback(() => {
@@ -76,7 +78,7 @@ export function UserMenu () {
                 label='Login'
               />
               <MenuItem
-                onClick={() => {}}
+                onClick={registerModal.onOpen}
                 label='Sign Up'
               />
             </>
