@@ -1,9 +1,18 @@
 'use client'
 
+import { type SafeUser } from '@/types'
 import { Container } from '../Container'
-import { Navbar } from './Navbar'
+import { Logo } from './Logo'
+import { Search } from './Search'
+import { UserMenu } from './UserMenu'
 
-export function Header () {
+interface HeaderProps {
+  currentUser?: SafeUser | null
+}
+
+export const Header: React.FC<HeaderProps> = ({
+  currentUser
+}) => {
   return (
     <header className='fixed w-full bg-white z-10 shadow-sm'>
       <div
@@ -14,7 +23,19 @@ export function Header () {
         '
       >
         <Container>
-          <Navbar />
+          <nav
+            className='
+      flex flex-row
+      items-center
+      justify-between
+      gap-3
+      md:gap-0
+    '
+          >
+            <Logo />
+            <Search />
+            <UserMenu currentUser={currentUser} />
+          </nav>
         </Container>
       </div>
     </header>

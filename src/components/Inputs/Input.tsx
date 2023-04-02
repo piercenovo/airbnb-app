@@ -40,7 +40,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
           w-full
           p-4
           pt-6
-          font-extralight
+          font-light
           bg-white
           border-[1px]
           rounded-md

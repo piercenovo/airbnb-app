@@ -1,16 +1,26 @@
 'use client'
 
-import { MenuIcon } from '../Icons'
-import { Avatar } from '../Avatar'
-import { useCallback, useState } from 'react'
-import { MenuItem } from './MenuItem'
+import { useLoginModal } from '@/hooks/useLoginModal copy'
 import { useRegisterModal } from '@/hooks/useRegisterModal'
+import { type SafeUser } from '@/types'
+import { signOut } from 'next-auth/react'
+import { useCallback, useState } from 'react'
+import { Avatar } from '../Avatar'
+import { MenuIcon } from '../Icons'
+import { MenuItem } from './MenuItem'
 
-export function UserMenu () {
+interface UserMenuProps {
+  currentUser?: SafeUser | null
+}
+
+export const UserMenu: React.FC<UserMenuProps> = ({
+  currentUser
+}) => {
   const registerModal = useRegisterModal()
+  const loginModal = useLoginModal()
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleOpen = useCallback(() => {
+  const handleToggle = useCallback(() => {
     setIsOpen(value => !value)
   }, [])
 
@@ -34,7 +44,7 @@ export function UserMenu () {
           Airbnb your home
         </div>
         <div
-          onClick={toggleOpen}
+          onClick={handleToggle}
           className='
             p-4
             md:py-1 md:px-2
@@ -51,7 +61,7 @@ export function UserMenu () {
         >
           <MenuIcon className='w-5' />
           <div className='hidden md:block'>
-            <Avatar />
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
       </div>
@@ -71,17 +81,50 @@ export function UserMenu () {
             text-sm
           '
         >
-          <div className='flex flex-col cursor-pointer'>
-            <>
-              <MenuItem
-                onClick={() => {}}
-                label='Login'
-              />
-              <MenuItem
-                onClick={registerModal.onOpen}
-                label='Sign Up'
-              />
-            </>
+          <div onClick={handleToggle} className='flex flex-col cursor-pointer'>
+            {currentUser
+              ? (
+                <>
+                  <MenuItem
+                    onClick={() => {}}
+                    label='My trips'
+                  />
+                  <MenuItem
+                    onClick={() => {}}
+                    label='My favorites'
+                  />
+                  <MenuItem
+                    onClick={() => {}}
+                    label='My reservations'
+                  />
+                  <MenuItem
+                    onClick={() => {}}
+                    label='My properties'
+                  />
+                  <MenuItem
+                    onClick={() => {}}
+                    label='Airbnb my home'
+                  />
+                  <hr />
+                  <MenuItem
+                    onClick={async () => await signOut()}
+                    label='Logout'
+                  />
+                </>
+                )
+              : (
+                <>
+                  <MenuItem
+                    onClick={loginModal.onOpen}
+                    label='Login'
+                  />
+                  <MenuItem
+                    onClick={registerModal.onOpen}
+                    label='Sign Up'
+                  />
+                </>
+                )}
+
           </div>
         </div>
       )}
