@@ -7,3 +7,15 @@ body,
 :root {
   height: 100%;
 }
+
+.category-list::-webkit-scrollbar {
+  @apply h-[0.9rem];
+}
+
+.category-list::-webkit-scrollbar-thumb {
+  @apply rounded-lg border-[3px] border-solid border-transparent bg-[#C1C1C1] hover:bg-[#A8A8A8] bg-clip-content;
+}
+
+.category-list::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
