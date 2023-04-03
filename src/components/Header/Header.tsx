@@ -16,23 +16,9 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className='fixed w-full bg-white z-10 shadow-sm'>
-      <div
-        className='
-          py-4
-          px-2 md:px-0
-          border-b-[1px]
-        '
-      >
+      <div className='py-4 px-2 md:px-0 border-b-[1px]'>
         <Container>
-          <nav
-            className='
-      flex flex-row
-      items-center
-      justify-between
-      gap-3
-      md:gap-0
-    '
-          >
+          <nav className='flex flex-row items-center justify-between gap-3 md:gap-0'>
             <Logo />
             <Search />
             <UserMenu currentUser={currentUser} />

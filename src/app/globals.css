@@ -9,7 +9,7 @@ body,
 }
 
 .category-list::-webkit-scrollbar {
-  @apply h-[0.9rem];
+  @apply h-[0.85rem] w-[0.85rem];
 }
 
 .category-list::-webkit-scrollbar-thumb {

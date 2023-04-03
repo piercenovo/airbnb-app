@@ -1,9 +1,9 @@
 'use client'
-import { useLoginModal } from '@/hooks/useLoginModal copy'
+import { useLoginModal } from '@/hooks/useLoginModal'
+import { useRegisterModal } from '@/hooks/useRegisterModal'
 import { signIn } from 'next-auth/react'
-// import { useRegisterModal } from '@/hooks/useRegisterModal'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { Button } from '../Button'
@@ -14,7 +14,7 @@ import { Modal } from './Modal'
 
 export function LoginModal () {
   const router = useRouter()
-  // const registerModal = useRegisterModal()
+  const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -42,7 +42,7 @@ export function LoginModal () {
         setIsLoading(false)
 
         if (callback?.ok) {
-          toast.success('Logged in successfully')
+          toast.success('Logged in')
           router.refresh()
           loginModal.onClose()
         }
@@ -52,6 +52,11 @@ export function LoginModal () {
         }
       })
   }
+
+  const onToggle = useCallback(() => {
+    loginModal.onClose()
+    registerModal.onOpen()
+  }, [loginModal, registerModal])
 
   const bodyContent = (
     <div className='flex flex-col gap-4'>
@@ -104,10 +109,13 @@ export function LoginModal () {
       >
         <div className='flex flex-row items-center justify-center gap-2'>
           <div>
-            Already have an account?
+            First time using Airbnb?
           </div>
-          <div className='text-neutral-800 cursor-pointer hover:underline'>
-            Log in
+          <div
+            onClick={onToggle}
+            className='text-neutral-800 cursor-pointer hover:underline'
+          >
+            Create an account
           </div>
         </div>
       </div>
