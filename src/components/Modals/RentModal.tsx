@@ -1,14 +1,18 @@
 'use client'
 
 import { categories } from '@/data/categories'
+import { STEPS } from '@/enums/steps'
 import { useActionRentModal } from '@/hooks/useActionRentModal'
+import dynamic from 'next/dynamic'
+import { useMemo } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import { Heading } from '../Heading'
 import { CategoryInput } from '../Inputs/CategoryInput'
+import { CountrySelect } from '../Inputs/CountrySelect'
 import { Modal } from './Modal'
 
 export const RentModal = () => {
-  const { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction } = useActionRentModal()
+  const { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction, step, onNext } = useActionRentModal()
 
   const {
     setValue,
@@ -28,6 +32,11 @@ export const RentModal = () => {
   })
 
   const category = watch('category')
+  const location = watch('location')
+
+  const Map = useMemo(() => dynamic(async () => await import('../Map'), {
+    ssr: false
+  }), [location])
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -37,7 +46,7 @@ export const RentModal = () => {
     })
   }
 
-  const bodyContent = (
+  let bodyContent = (
     <div className='flex flex-col gap-8'>
       <Heading
         title='Which of these best describes your place?'
@@ -60,11 +69,40 @@ export const RentModal = () => {
     </div>
   )
 
+  if (step === STEPS.LOCATION) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Where is your place located?'
+          subtitle='Help guests find you!'
+        />
+        <CountrySelect
+          value={location}
+          onChange={value => setCustomValue('location', value)}
+        />
+        <Map
+          center={location?.latlng}
+        />
+      </div>
+    )
+  }
+
+  if (step === STEPS.INFO) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Share some basics about your place'
+          subtitle='What amenities do you have?'
+        />
+      </div>
+    )
+  }
+
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      onSubmit={onClose}
+      onSubmit={onNext}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={secondaryAction}

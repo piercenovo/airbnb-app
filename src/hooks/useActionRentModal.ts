@@ -13,9 +13,9 @@ export function useActionRentModal () {
     setStep((value) => value - 1)
   }
 
-  // const onNext = () => {
-  //   setStep((value) => value + 1)
-  // }
+  const onNext = () => {
+    setStep((value) => value + 1)
+  }
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.PRICE) {
@@ -35,5 +35,5 @@ export function useActionRentModal () {
 
   const secondaryAction = step === STEPS.CATEGORY ? undefined : onBack
 
-  return { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction }
+  return { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction, step, onNext }
 }

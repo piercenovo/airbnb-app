@@ -16,6 +16,7 @@
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "react/jsx-handler-names": "off",
+    "react-hooks/exhaustive-deps": "off",
     "no-var": "off",
     "n/handle-callback-err":"off"
   }
