@@ -47,7 +47,7 @@ export const Counter: React.FC<CounterProps> = ({
         >
           <MinusIcon className='w-4' />
         </div>
-        <div className='font-light text-xl w-4 text-neutral-600 flex justify-center'>
+        <div className='font-light text-lg w-4 text-neutral-600 flex justify-center'>
           {value}
         </div>
         <div
