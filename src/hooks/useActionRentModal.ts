@@ -35,5 +35,5 @@ export function useActionRentModal () {
 
   const secondaryAction = step === STEPS.CATEGORY ? undefined : onBack
 
-  return { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction, step, onNext }
+  return { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction, step, onNext, setStep, rentModal }
 }
