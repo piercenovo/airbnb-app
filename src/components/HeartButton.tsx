@@ -1,5 +1,6 @@
 'use client'
 
+import { useFavorite } from '@/hooks/useFavorite'
 import type { SafeUser } from '@/types'
 import { OutlineHeartIcon, SolidHeartIcon } from './Icons'
 
@@ -12,8 +13,7 @@ export const HeartButton: React.FunctionComponent<HeartButtonProps> = ({
   listingId,
   currentUser
 }) => {
-  const hasFavorited = false
-  const toggleFavorite = () => {}
+  const { hasFavorited, toggleFavorite } = useFavorite({ listingId, currentUser })
 
   return (
     <div
