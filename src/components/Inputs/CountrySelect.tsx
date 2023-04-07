@@ -1,7 +1,7 @@
 'use client'
 
 import { useCountries } from '@/hooks/useCountries'
-import { CountrySelectValue } from '@/types'
+import { type CountrySelectValue } from '@/types'
 import Select from 'react-select'
 
 interface CountrySelectProps {

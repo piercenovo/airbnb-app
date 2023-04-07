@@ -1,6 +1,6 @@
 'use client'
 
-import { IconProps } from '@/types'
+import { type IconProps } from '@/types'
 
 interface CategoryInputProps {
   icon: React.FC<IconProps>

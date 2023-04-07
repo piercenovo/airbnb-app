@@ -31,7 +31,7 @@ export default async function getCurrentUser () {
       updatedAt: currentUser.updatedAt.toISOString(),
       emailVerified: currentUser.emailVerified?.toISOString() || null
     }
-  } catch (err: any) {
+  } catch (error: any) {
     return null
   }
 }
