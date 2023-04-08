@@ -1,4 +1,4 @@
-import { Listing, type User } from '@prisma/client'
+import { type Listing, type User } from '@prisma/client'
 
 export type SafeListing = Omit<
 Listing,
@@ -16,7 +16,7 @@ User,
   emailVerified: string | null
 }
 
-export interface IconProps {
+export interface IconType {
   className?: string
 }
 

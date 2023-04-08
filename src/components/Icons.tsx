@@ -1,6 +1,6 @@
-import { type IconProps } from '@/types'
+import { type IconType } from '@/types'
 
-export const SearchIcon: React.FC<IconProps> = ({ className }) => {
+export const SearchIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -12,7 +12,7 @@ export const SearchIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const MenuIcon: React.FC<IconProps> = ({ className }) => {
+export const MenuIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -24,7 +24,7 @@ export const MenuIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const CloseIcon: React.FC<IconProps> = ({ className }) => {
+export const CloseIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -36,7 +36,7 @@ export const CloseIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const HolaIcon: React.FC<IconProps> = ({ className }) => {
+export const HolaIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -48,7 +48,7 @@ export const HolaIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const GoogleIcon: React.FC<IconProps> = ({ className }) => {
+export const GoogleIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -75,7 +75,7 @@ export const GoogleIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const GithubIcon: React.FC<IconProps> = ({ className }) => {
+export const GithubIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -113,7 +113,7 @@ export const GithubIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const DollarIcon: React.FC<IconProps> = ({ className }) => {
+export const DollarIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -125,7 +125,7 @@ export const DollarIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const BeachIcon: React.FC<IconProps> = ({ className }) => {
+export const BeachIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -144,7 +144,7 @@ export const BeachIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const WindmillIcon: React.FC<IconProps> = ({ className }) => {
+export const WindmillIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -161,7 +161,7 @@ export const WindmillIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const ModernIcon: React.FC<IconProps> = ({ className }) => {
+export const ModernIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -180,7 +180,7 @@ export const ModernIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const CountrysideIcon: React.FC<IconProps> = ({ className }) => {
+export const CountrysideIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -199,7 +199,7 @@ export const CountrysideIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const PoolIcon: React.FC<IconProps> = ({ className }) => {
+export const PoolIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -215,7 +215,7 @@ export const PoolIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const IslandIcon: React.FC<IconProps> = ({ className }) => {
+export const IslandIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -232,7 +232,7 @@ export const IslandIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const LakeIcon: React.FC<IconProps> = ({ className }) => {
+export const LakeIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -247,7 +247,7 @@ export const LakeIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const SkiingIcon: React.FC<IconProps> = ({ className }) => {
+export const SkiingIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -263,7 +263,7 @@ export const SkiingIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const CastleIcon: React.FC<IconProps> = ({ className }) => {
+export const CastleIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -280,7 +280,7 @@ export const CastleIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const CaveIcon: React.FC<IconProps> = ({ className }) => {
+export const CaveIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -297,7 +297,7 @@ export const CaveIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const CampingIcon: React.FC<IconProps> = ({ className }) => {
+export const CampingIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -314,7 +314,7 @@ export const CampingIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const ArticIcon: React.FC<IconProps> = ({ className }) => {
+export const ArticIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -329,7 +329,7 @@ export const ArticIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const DesertIcon: React.FC<IconProps> = ({ className }) => {
+export const DesertIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -345,7 +345,7 @@ export const DesertIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const BarnIcon: React.FC<IconProps> = ({ className }) => {
+export const BarnIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -366,7 +366,7 @@ export const BarnIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const LuxIcon: React.FC<IconProps> = ({ className }) => {
+export const LuxIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -394,7 +394,7 @@ export const LuxIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const MinusIcon: React.FC<IconProps> = ({ className }) => {
+export const MinusIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -407,7 +407,7 @@ export const MinusIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const PlusIcon: React.FC<IconProps> = ({ className }) => {
+export const PlusIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -420,7 +420,7 @@ export const PlusIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const PhotoPlusIcon: React.FC<IconProps> = ({ className }) => {
+export const PhotoPlusIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -435,7 +435,7 @@ export const PhotoPlusIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const OutlineHeartIcon: React.FC<IconProps> = ({ className }) => {
+export const OutlineHeartIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -447,7 +447,7 @@ export const OutlineHeartIcon: React.FC<IconProps> = ({ className }) => {
   )
 }
 
-export const SolidHeartIcon: React.FC<IconProps> = ({ className }) => {
+export const SolidHeartIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

@@ -1,9 +1,9 @@
 'use client'
 
-import { type IconProps } from '@/types'
+import { type IconType } from '@/types'
 
 interface CategoryInputProps {
-  icon: React.FC<IconProps>
+  icon: React.FC<IconType>
   label: string
   selected?: boolean
   onClick: (value: string) => void

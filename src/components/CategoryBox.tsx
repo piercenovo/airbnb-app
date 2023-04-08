@@ -1,12 +1,12 @@
 'use client'
 
-import { type IconProps } from '@/types'
+import { type IconType } from '@/types'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 import qs from 'query-string'
 
 interface CategoryBoxProps {
-  icon: React.FC<IconProps>
+  icon: React.FC<IconType>
   label: string
   selected?: boolean
 }

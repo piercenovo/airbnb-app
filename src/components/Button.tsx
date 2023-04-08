@@ -1,4 +1,4 @@
-import { type IconProps } from '@/types'
+import { type IconType } from '@/types'
 
 interface ButtonProps {
   label: string
@@ -6,7 +6,7 @@ interface ButtonProps {
   disabled?: boolean
   outline?: boolean
   small?: boolean
-  icon?: React.FC<IconProps>
+  icon?: React.FC<IconType>
 }
 
 export const Button: React.FC<ButtonProps> = ({
