@@ -1,4 +1,4 @@
-import { type Listing, type User } from '@prisma/client'
+import { type Reservation, type Listing, type User } from '@prisma/client'
 
 export type SafeListing = Omit<
 Listing,
@@ -14,6 +14,16 @@ User,
   createdAt: string
   updatedAt: string
   emailVerified: string | null
+}
+
+export type SafeReservation = Omit<
+Reservation,
+'createdAt' | 'startDate' | 'endDate' | 'listing'
+> & {
+  createdAt: string
+  startDate: string
+  endDate: string
+  listing: SafeListing
 }
 
 export interface IconType {

@@ -10,8 +10,7 @@ import { ListingHead } from '@/components/Listings/ListingHead'
 import { ListingInfo } from '@/components/Listings/ListingInfo'
 import { categories } from '@/data/categories'
 import { ListingReservation } from '@/components/Listings/ListingReservation'
-import { Reservation } from '@prisma/client'
-import { type SafeListing, type SafeUser } from '@/types'
+import { type SafeReservation, type SafeListing, type SafeUser } from '@/types'
 
 import { useLoginModal } from '@/hooks/useLoginModal'
 import { useRouter } from 'next/navigation'
@@ -24,7 +23,7 @@ const initialDateRange = {
 }
 
 interface ListingClientProps {
-  reservations?: Reservation[]
+  reservations?: SafeReservation[]
   listing: SafeListing & {
     user: SafeUser
   }
@@ -144,7 +143,7 @@ export const ListingClient: React.FC<ListingClientProps> = ({
               <ListingReservation
                 price={listing.price}
                 totalPrice={totalPrice}
-                onChangeDate={(value: any) => setDateRange(value)}
+                onChangeDate={(value) => setDateRange(value)}
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
