@@ -366,7 +366,7 @@ export const BarnIcon: React.FC<IconType> = ({ className }) => {
   )
 }
 
-export const LuxIcon: React.FC<IconType> = ({ className }) => {
+export const LuxeIcon: React.FC<IconType> = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

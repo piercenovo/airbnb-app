@@ -1,4 +1,4 @@
-import { BeachIcon, IslandIcon, ModernIcon, CountrysideIcon, PoolIcon, WindmillIcon, LakeIcon, SkiingIcon, CastleIcon, CaveIcon, CampingIcon, ArticIcon, DesertIcon, BarnIcon, LuxIcon } from '@/components/Icons'
+import { BeachIcon, IslandIcon, ModernIcon, CountrysideIcon, PoolIcon, WindmillIcon, LakeIcon, SkiingIcon, CastleIcon, CaveIcon, CampingIcon, ArticIcon, DesertIcon, BarnIcon, LuxeIcon } from '@/components/Icons'
 
 export const categories = [
   {
@@ -72,8 +72,8 @@ export const categories = [
     description: 'This property is in a barn!'
   },
   {
-    label: 'Lux',
-    icon: LuxIcon,
+    label: 'Luxe',
+    icon: LuxeIcon,
     description: 'This property is brand new and luxurious!'
   }
 ]
