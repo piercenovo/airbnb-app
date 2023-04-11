@@ -113,7 +113,7 @@ export function LoginModal () {
           </div>
           <div
             onClick={onToggle}
-            className='text-neutral-800 cursor-pointer hover:underline'
+            className='text-neutral-900 cursor-pointer hover:underline'
           >
             Create an account
           </div>

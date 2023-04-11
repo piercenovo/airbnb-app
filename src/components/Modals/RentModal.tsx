@@ -1,7 +1,7 @@
 'use client'
 
 import { categories } from '@/data/categories'
-import { STEPS } from '@/enums/steps'
+import { RENT_STEPS } from '@/enums/rentSteps'
 import { useActionRentModal } from '@/hooks/useActionRentModal'
 import dynamic from 'next/dynamic'
 import { useMemo, useState } from 'react'
@@ -69,7 +69,7 @@ export const RentModal = () => {
   }
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    if (step !== STEPS.PRICE) {
+    if (step !== RENT_STEPS.PRICE) {
       return onNext()
     }
     setIsLoading(true)
@@ -79,7 +79,7 @@ export const RentModal = () => {
         toast.success('Listing Created!')
         router.refresh()
         reset()
-        setStep(STEPS.CATEGORY)
+        setStep(RENT_STEPS.CATEGORY)
         rentModal.onClose()
       })
       .catch(() => {
@@ -113,7 +113,7 @@ export const RentModal = () => {
     </div>
   )
 
-  if (step === STEPS.LOCATION) {
+  if (step === RENT_STEPS.LOCATION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
         <Heading
@@ -131,7 +131,7 @@ export const RentModal = () => {
     )
   }
 
-  if (step === STEPS.INFO) {
+  if (step === RENT_STEPS.INFO) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
         <Heading
@@ -162,7 +162,7 @@ export const RentModal = () => {
     )
   }
 
-  if (step === STEPS.IMAGES) {
+  if (step === RENT_STEPS.IMAGES) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
         <Heading
@@ -177,7 +177,7 @@ export const RentModal = () => {
     )
   }
 
-  if (step === STEPS.DESCRIPTION) {
+  if (step === RENT_STEPS.DESCRIPTION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
         <Heading
@@ -205,7 +205,7 @@ export const RentModal = () => {
     )
   }
 
-  if (step === STEPS.PRICE) {
+  if (step === RENT_STEPS.PRICE) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
         <Heading

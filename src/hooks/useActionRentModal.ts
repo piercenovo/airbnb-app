@@ -1,4 +1,4 @@
-import { STEPS } from '@/enums/steps'
+import { RENT_STEPS } from '@/enums/rentSteps'
 import { useMemo, useState } from 'react'
 import { useRentModal } from './useRentModal'
 
@@ -7,7 +7,7 @@ export function useActionRentModal () {
   const isOpen = rentModal.isOpen
   const onClose = rentModal.onClose
 
-  const [step, setStep] = useState(STEPS.CATEGORY)
+  const [step, setStep] = useState(RENT_STEPS.CATEGORY)
 
   const onBack = () => {
     setStep((value) => value - 1)
@@ -18,7 +18,7 @@ export function useActionRentModal () {
   }
 
   const actionLabel = useMemo(() => {
-    if (step === STEPS.PRICE) {
+    if (step === RENT_STEPS.PRICE) {
       return 'Create'
     }
 
@@ -26,14 +26,14 @@ export function useActionRentModal () {
   }, [step])
 
   const secondaryActionLabel = useMemo(() => {
-    if (step === STEPS.CATEGORY) {
+    if (step === RENT_STEPS.CATEGORY) {
       return undefined
     }
 
     return 'Back'
   }, [step])
 
-  const secondaryAction = step === STEPS.CATEGORY ? undefined : onBack
+  const secondaryAction = step === RENT_STEPS.CATEGORY ? undefined : onBack
 
   return { isOpen, onClose, actionLabel, secondaryActionLabel, secondaryAction, step, onNext, setStep, rentModal }
 }
