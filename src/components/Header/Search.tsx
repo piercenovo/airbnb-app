@@ -1,10 +1,51 @@
 'use client'
 
+import { useCountries } from '@/hooks/useCountries'
 import { useSearchModal } from '@/hooks/useSearchModal'
+import { differenceInDays } from 'date-fns'
+import { useSearchParams } from 'next/navigation'
+import { useMemo } from 'react'
 import { SearchIcon } from '../Icons'
 
 export function Search () {
   const searchModal = useSearchModal()
+  const params = useSearchParams()
+  const { getByValue } = useCountries()
+
+  const locationValue = params?.get('locationValue')
+  const startDate = params?.get('startDate')
+  const endDate = params?.get('endDate')
+  const guestCount = params?.get('guestCount')
+
+  const locationLabel = useMemo(() => {
+    if (locationValue) {
+      return getByValue(locationValue)?.label
+    }
+
+    return 'Anywhere'
+  }, [getByValue, locationValue])
+
+  const durationLabel = useMemo(() => {
+    if (startDate && endDate) {
+      const start = new Date(startDate)
+      const end = new Date(endDate)
+      let diff = differenceInDays(end, start)
+
+      if (diff === 0) {
+        diff = 1
+      }
+
+      return `${diff} Days`
+    }
+
+    return 'Any Week'
+  }, [startDate, endDate])
+
+  const guestLabel = useMemo(() => {
+    if (guestCount) {
+      return `${guestCount} Guests`
+    }
+  }, [guestCount])
 
   return (
     <div
@@ -35,7 +76,7 @@ export function Search () {
             px-6
           '
         >
-          Anywhere
+          {locationLabel}
         </div>
         <div
           className='
@@ -49,7 +90,7 @@ export function Search () {
             text-center
           '
         >
-          Any Week
+          {durationLabel}
         </div>
         <div
           className='
@@ -63,7 +104,7 @@ export function Search () {
           '
         >
           <div className='hidden sm:block'>
-            Add Guests
+            {guestLabel}
           </div>
           <div
             className='
